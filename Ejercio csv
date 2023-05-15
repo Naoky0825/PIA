@@ -1,0 +1,17 @@
+import csv
+
+# Definir los datos que deseas almacenar en el archivo CSV
+datos = [
+    ["Juan", 25, "Madrid"],
+    ["Ana", 30, "Barcelona"],
+    ["Pedro", 20, "Valencia"]
+]
+
+# Abrir un archivo CSV y escribir los datos en él
+with open("lista.csv", mode="w", newline="") as archivo_csv:
+    escritor_csv = csv.writer(archivo_csv, delimiter=",")
+    escritor_csv.writerow(["nombre", "edad", "ciudad"]) # Escribir la primera fila con los nombres de las columnas
+    for dato in datos:
+        escritor_csv.writerow(dato) # Escribir las filas con los valores
+
+print("Archivo CSV creado exitosamente.")
